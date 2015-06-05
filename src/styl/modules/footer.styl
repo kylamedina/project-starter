@@ -1,152 +1,142 @@
 /*!**
   title: Footer
   section: Main Footer
+  description: This is the main footer.
   example: |
-    <footer>
-      <div class="footer--top">
-        <div class="container">
-          <div class="row">
-            <div class="footer__social-list">
-              <div class="container">
-                <div class="row"><a href="">
-                    <svg viewbox="0 0 100 100">
-                      <use xlink:href="includes/symbols.svg#icon_linkedin"></use>
-                    </svg></a><a href="">
-                    <svg viewbox="0 0 100 100">
-                      <use xlink:href="includes/symbols.svg#icon_twitter"></use>
-                    </svg></a><a href="">
-                    <svg viewbox="0 0 100 100">
-                      <use xlink:href="includes/symbols.svg#icon_facebook"></use>
-                    </svg></a><a href="">
-                    <svg viewbox="0 0 100 100">
-                      <use xlink:href="includes/symbols.svg#icon_rss"></use>
-                    </svg></a>
-                </div>
-              </div>
-            </div>
-            <div class="footer__subnav">
-              <div class="container">
-                <div class="row"><a href="#" target="_blank">Legal</a><a href="#" target="_blank">Privacy Policy</a><a href="#" target="_blank">Cookie Policy</a><a href="#" target="_blank">Safe Harbor</a><span>©2015 All rights reserved</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    footer.footer.footer--main(style='position:relative;')
+        .container
+            .row
+                .footer__social-list
+                    .container
+                        .row
+                            each val, index in [{name: 'linkedin'},{name: 'twitter'},{name: 'facebook'}]
+                                a(href="")
+                                    svg(viewbox='0 0 100 100')
+                                        use(xlink:href='#icon_#{val.name}')
+                .footer__subnav
+                    .container
+                        .row
+                            a(href="#", target="_blank") Legal
+                            a(href="#", target="_blank") Privacy Policy
+                            a(href="#", target="_blank") Cookie Policy
+                            span &copy;2015 all rights reserved
 ***/
-.footer--top
-	background-color: blue
-	border-top 1px solid rgba(darkblue,0.2)
-	border-bottom 1px solid rgba(darkblue,0.2)
-	
+.footer--main
+    position fixed
+    bottom px(40)
+    left px(40)
+    right px(40)
+    background-color: blue
+    border-top 1px solid rgba(darkblue,0.2)
+    border-bottom 1px solid rgba(darkblue,0.2)
+    
 .footer__social-list
-	float left
-	a
-		display block
-		float left
-		size r(5.2rem)
-		border-left 1px solid rgba(darkblue,0.2)
-		color white
-		position: relative
-		border-bottom none
-		transition background-color 0.2s ease
-		&:hover
-			border-bottom none
-			background-color darkblue
-			
-		&:last-of-type
-			border-right 1px solid rgba(darkblue,0.2)
-		svg
-			size r(3rem)
-			align()
+    float left
+    a
+        display block
+        float left
+        size 5.2rem
+        border-left 1px solid rgba(darkblue,0.2)
+        color white
+        position: relative
+        border-bottom none
+        transition background-color 0.2s ease
+        &:hover
+            border-bottom none
+            background-color darkblue
+            
+        &:last-of-type
+            border-right 1px solid rgba(darkblue,0.2)
+        svg
+            size 3rem
+            align()
 
 .footer__subnav
-	float: left
-	color white
-	a, span
-		display inline-block
-		padding 0 r(1.2rem)
-		border-bottom none
-		color white
-		fs(1.2rem)
-		font-family proxLight
-		&:hover
-			border-bottom none
-	a
-		border-right r(0.1rem) solid white
+    float: left
+    color white
+    a, span
+        display inline-block
+        padding 0 1.2rem
+        border-bottom none
+        color white
+        fs(1.2rem)
+        &:hover
+            border-bottom none
+    a
+        border-right 0.1rem solid white
 
 
 +above(940px)
-	.footer__social-list,
-	.footer__subnav
-		.container
-			max-width 100%
-			padding 0
-	.footer__subnav
-		padding-left r(1.2rem)
-		.container
-			align(vertical)
+    .footer__social-list,
+    .footer__subnav
+        .container
+            max-width 100%
+            padding 0
+    .footer__subnav
+        padding-left 1.2rem
+        .container
+            align(vertical)
 
 +below(940px)
-	.footer--top
-		border-bottom none
-		background-color transparent
-		> .container
-			max-width 100%
-			padding 0
-	.footer__social-list,
-	.footer__subnav
-		float: none
-		padding-left 0
-	.footer__social-list
-		background-color blue
-	.footer__subnav
-		// display none
-		background-color white
-		border-bottom 1px solid gray
-		padding r(2rem) 0
-		a, span
-			color gray
-		a
-			&:hover
-				color darkgray
-			&:first-of-type
-				padding-left 0
-		span
-			align(vertical)
-			position: absolute
-			right 0
-			
+    .footer--top
+        border-bottom none
+        background-color transparent
+        > .container
+            max-width 100%
+            padding 0
+    .footer__social-list,
+    .footer__subnav
+        float: none
+        padding-left 0
+    .footer__social-list
+        background-color blue
+    .footer__subnav
+        // display none
+        background-color white
+        border-bottom 1px solid gray
+        padding 2rem 0
+        a, span
+            color gray
+        a
+            &:hover
+                color darkgray
+            &:first-of-type
+                padding-left 0
+        span
+            align(vertical)
+            position: absolute
+            right 0
+            
 +below(640px)
-	.footer__social-list,
-	.footer__subnav
-		text-align center
-	.footer__social-list
-		a
-			float none
-			display inline-block
-	.footer__subnav
-		a
-			fs(1.6rem)
-		span
-			display block
-			padding r(2rem) 0 0 0
-			position: static
-			transform none
-			
+    .footer__social-list,
+    .footer__subnav
+        text-align center
+    .footer__social-list
+        a
+            float none
+            display inline-block
+    .footer__subnav
+        a
+            fs(1.6rem)
+        span
+            display block
+            padding 2rem 0 0 0
+            position: static
+            transform none
+            
 
 +below(540px)
-	.footer__social-list
-		.container
-			padding 0
-		a
-			width 25%
-	.footer__subnav
-		a
-			display block
-			padding r(2rem) 0 0 0
-			&:first-of-type
-				padding-top 0
+    .footer__social-list
+        .container
+            padding 0
+        a
+            width 25%
+    .footer__subnav
+        a
+            display block
+            padding 2rem 0 0 0
+            &:first-of-type
+                padding-top 0
 
 .footer--section
-	padding-bottom r(6rem)
+    padding-bottom 6rem

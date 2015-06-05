@@ -8,7 +8,7 @@
 				"design",
 				// "app",
 				// "tmp",
-				"font"
+				// "font"
 			],
 			"path": ".",
 			"file_exclude_patterns": ["*.zip"]

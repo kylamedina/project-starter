@@ -1,6 +1,11 @@
 gulp = require('gulp')
 $ = require('gulp-load-plugins')(lazy: true)
-onError = require('../error')
+
+onError = (error) ->
+	$.notify.onError('ERROR: <%- error.plugin %>') error
+	$.util.beep()
+	$.util.log '======= ERROR. ========\n'
+	$.util.log error
 	
 gulp.task 'svgmin', ['clean:svg'], ->
 	gulp.src([

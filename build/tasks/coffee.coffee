@@ -1,8 +1,13 @@
 gulp = require('gulp')
 $ = require('gulp-load-plugins')(lazy: true)
 browserSync = require('browser-sync')
-onError = require('../error')
 stylish = require('jshint-stylish')
+
+onError = (error) ->
+	$.notify.onError('ERROR: <%- error.plugin %>') error
+	$.util.beep()
+	$.util.log '======= ERROR. ========\n'
+	$.util.log error
 	
 gulp.task 'coffee-watch', ->
 	gulp.src([

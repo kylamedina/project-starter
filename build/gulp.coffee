@@ -2,8 +2,14 @@
 gulp = require('gulp')
 $ = require('gulp-load-plugins')(lazy: true)
 browserSync = require('browser-sync')
-onError = require('./error')
 runSequence = require('run-sequence').use(gulp)
+
+onError = (error) ->
+	$.notify.onError('ERROR: <%- error.plugin %>') error
+	$.util.beep()
+	$.util.log '======= ERROR. ========\n'
+	$.util.log error
+	
 	
 requireDir = require('require-dir')
 
@@ -14,13 +20,19 @@ requireDir './tasks',
 gulp.task 'watch', ['browser-sync'], ->
 	gulp.watch [ 'src/static/**/*' ], ['static']
 	gulp.watch [ 'src/img/**/*' ], ['img']
-	gulp.watch [ 'src/svg/**/*.svg' ], ['svg','jade']
-	gulp.watch [ 'src/styl/**/*.styl' ], ['styl','styleguide']
-	gulp.watch [ 'src/jade/**/*.jade' ], ['jade']
+	gulp.watch [ 'src/svg/**/*.svg' ], ['svg']
+	gulp.watch [ 'src/styl/**/*.styl' ], ['styl']
+	gulp.watch [ 'src/jade/**/*' ], ['jade']
 	gulp.watch [ 'src/font/**/*' ], ['font']
 	gulp.watch [ 'src/coffee/**/**/*.coffee' ], ['coffee']
-	gulp.watch [ './build/styleguide/**/*', './README.md' ], ['styleguide']
+	gulp.watch [ 'build/components/**/*' ], ['bower']
 	gulp.watch [ './tmp/js/**/*.js' ], ['js']
+	gulp.watch [ 
+		'./build/styleguide/**/*', 
+		'./README.md',
+		'./app/css/**/*.css' 
+	], ['styleguide']
+	
 
 gulp.task 'default', (cb) ->
 	runSequence 'install',
@@ -37,8 +49,27 @@ gulp.task 'default', (cb) ->
 		'styleguide'
 		->
 
-
 gulp.task 'browser-sync', ->
+	browserSync 
+		# proxy: 'localhost:3000'
+		port: 8088
+		open: false
+		tunnel: false
+		online: true
+		logConnections: true
+		snippetOptions:
+			rule:
+				match: /<browsersync>/i,
+				fn: (snippet, match) ->
+					return snippet + match;
+		files: [ 
+			'app/**/*',
+			'docs/styleguide/**/*'
+		]
+		server: {
+			baseDir: ['app','docs']
+		}
+gulp.task 'browser-sync2', ->
 	app = browserSync.create('app')
 	docs = browserSync.create('docs')
 	app.init
@@ -48,7 +79,11 @@ gulp.task 'browser-sync', ->
 		online: true
 		ghostMode: false
 		logConnections: true
-		notify: false
+		snippetOptions:
+		    rule:
+		        match: /data-browsersync/i,
+		        fn: (snippet, match) ->
+		            return snippet + match;
 		files: {
 			'app/**/*'
 		}
@@ -61,12 +96,9 @@ gulp.task 'browser-sync', ->
 		port: 1111
 		open: false
 		tunnel: false
-		online: true
+		online: false
 		ghostMode: false
 		logConnections: false
-		notify: false
-		injectChanges: false
-		codeSync: false
 		ui: false
 		snippetOptions:
 		    rule:

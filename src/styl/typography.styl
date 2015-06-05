@@ -10,14 +10,19 @@
     <h6>H6 Header</h6>
 ***/
 
-html
-	font-family proxReg
-
 h1, h2, h3, h4, h5, h6
-	text-rendering optimizeLegibility
-	font-smooth always
-	-moz-osx-font-smoothing: grayscale
-	
+  // text-rendering optimizeLegibility
+  font-smooth always
+  -moz-osx-font-smoothing: grayscale
+  
 h1, h2, h3, h4, h5, h6, p, li
-	font-weight: normal
-	color inherit
+  font-weight: normal
+  color inherit
+
+h1
+  fs(4rem) 
+  padding-bottom px(24)
+  
+p
+  fs(1.6rem)  
+  padding-bottom px(16)

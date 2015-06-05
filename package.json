@@ -50,7 +50,7 @@
     "require-dir": "*",
     "run-sequence": "*",
     "rupture": "*",
-    "styleguidejs": "*",
+    "styleguidejs": "kylamedina/styleguide.js",
     "stylus": "*",
     "uglify-js": "*"
   }
