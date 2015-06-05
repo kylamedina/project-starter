@@ -1,0 +1,20 @@
+a
+	reset-link()
+	cursor pointer
+	text-decoration none
+	transition all 0.2s ease
+	&:focus
+		outline: 0
+	&:link
+		color blue
+	&:hover
+		color darkblue
+	&:active
+		color darkblue
+		transform scale(0.99)
+		transform-origin 50% 50%
+	&[disabled]
+		color gray !important
+		transform scale(1) !important
+	&:visited
+		color blue

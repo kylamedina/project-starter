@@ -1,0 +1,40 @@
+doctype html
+html.no-js(lang='')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
+		title
+		meta(name='description', content='')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='apple-touch-icon', href='apple-touch-icon.png')
+		//- Place favicon.ico in the root directory
+		link(rel='stylesheet', href='css/font.css')
+		link(rel='stylesheet', href='css/main.css')
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js')
+		script.
+			// Async Image Loading
+			function aload(t){"use strict";t=t||window.document.querySelectorAll("[data-aload]"),void 0===t.length&&(t=[t]);var a,e=0,r=t.length;for(e;r>e;e+=1)a=t[e],a["LINK"!==a.tagName?"src":"href"]=a.getAttribute("data-aload"),a.removeAttribute("data-aload");return t}
+		block head
+			//- If extra head content is necessary per page, it can be added in index.jade
+
+	body(style='opacity:0')
+
+		div.hidden
+			include ./includes/symbols.svg
+		
+		block content
+			//- This gets replaced by content in index.jade
+		
+		block footer
+			//- If extra footer content is necessary per page, it can be added in index.jade
+
+		block scripts
+		script.
+			head.load(
+				{ vendor: './js/vendor.js' }, 
+				{ app: './js/app.js' }, 
+				function() {
+				// Async Image Loading
+				aload();
+			});

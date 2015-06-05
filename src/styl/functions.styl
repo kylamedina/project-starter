@@ -1,0 +1,10 @@
+font-size = 10
+fs(size)
+	if (unit(size) == 'rem')
+		font-size round(unit((font-size*size), 'px'))
+		font-size size
+	else
+		font-size size
+
+px(value)
+	unit((value*0.1), 'rem')

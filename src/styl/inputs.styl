@@ -1,0 +1,29 @@
+$input
+	appearance none
+	-moz-appearance none
+	-webkit-appearance none
+
+	border-radius 0
+	-moz-border-radius 0
+	-webkit-border-radius 0
+
+	display block
+	width 100%
+	margin 0
+	border 0px solid transparent
+	fs(1.4rem)
+	display block
+	background white no-repeat
+	box-sizing border-box
+	&:focus
+		outline 0
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=search],
+input[type=number],
+input[type=password],
+textarea
+	@extend $input

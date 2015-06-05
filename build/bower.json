@@ -1,0 +1,30 @@
+{
+  "name": "kyla",
+  "version": "1.0.0",
+  "authors": [
+    "Kyla Medina <hi@ky.la>"
+  ],
+  "license": "MIT",
+  "homepage": "ky.la",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "../src/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "velocity": "~1.2.2",
+    "waypoints": "~3.1.1"
+  },
+  "overrides": {
+    "waypoints": {
+      "main": [
+        "lib/jquery.waypoints.js"
+      ]
+    }
+  }
+}
