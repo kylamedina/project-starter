@@ -100,7 +100,6 @@ app
 dev
 design
 node_modules
-build/components
-components
+build/components/**/*
 docs
 tmp
