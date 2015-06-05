@@ -20,8 +20,6 @@
   |
   |- Docs - Dynamically Generated Documentation
   |
-  |- Tmp - Temporary files created as part of the build process
-  |
   |- App - The Site
 ```
 
@@ -38,7 +36,7 @@ Install Node Build Components:
 
 `npm i`
 
-Install Bower Front-End Components:
+Install Bower Front-End Components into the build folder:
 
 `bower i`
 
@@ -46,4 +44,4 @@ Run all tasks:
 
 `gulp`
 
-Check localhost:8088 and localhost:1111 in your browser.
+Check localhost:8088 and localhost:8088/styleguide in your browser.

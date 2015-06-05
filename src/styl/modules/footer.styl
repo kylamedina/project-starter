@@ -3,7 +3,7 @@
   section: Main Footer
   description: This is the main footer.
   example: |
-    footer.footer.footer--main(style='position:relative;')
+    footer.footer.footer--main(style='position:static;')
         .container
             .row
                 .footer__social-list
@@ -12,7 +12,7 @@
                             each val, index in [{name: 'linkedin'},{name: 'twitter'},{name: 'facebook'}]
                                 a(href="")
                                     svg(viewbox='0 0 100 100')
-                                        use(xlink:href='#icon_#{val.name}')
+                                        use(xlink:href='includes/symbols.svg#icon_#{val.name}')
                 .footer__subnav
                     .container
                         .row
@@ -26,7 +26,7 @@
     bottom px(40)
     left px(40)
     right px(40)
-    background-color: blue
+    background-color: black
     border-top 1px solid rgba(darkblue,0.2)
     border-bottom 1px solid rgba(darkblue,0.2)
     

@@ -26,7 +26,6 @@ gulp.task 'watch', ['browser-sync'], ->
 	gulp.watch [ 'src/font/**/*' ], ['font']
 	gulp.watch [ 'src/coffee/**/**/*.coffee' ], ['coffee']
 	gulp.watch [ 'build/components/**/*' ], ['bower']
-	gulp.watch [ './tmp/js/**/*.js' ], ['js']
 	gulp.watch [ 
 		'./build/styleguide/**/*', 
 		'./README.md',
@@ -44,7 +43,6 @@ gulp.task 'default', (cb) ->
 		'static', 
 		'img', 
 		'svg',
-		'js',
 		'watch',
 		'styleguide'
 		->
@@ -69,54 +67,6 @@ gulp.task 'browser-sync', ->
 		server: {
 			baseDir: ['app','docs']
 		}
-gulp.task 'browser-sync2', ->
-	app = browserSync.create('app')
-	docs = browserSync.create('docs')
-	app.init
-		port: 8088
-		open: false
-		tunnel: false
-		online: true
-		ghostMode: false
-		logConnections: true
-		snippetOptions:
-		    rule:
-		        match: /data-browsersync/i,
-		        fn: (snippet, match) ->
-		            return snippet + match;
-		files: {
-			'app/**/*'
-		}
-		server: {
-			baseDir: [
-				'app'
-			]
-		}
-	docs.init
-		port: 1111
-		open: false
-		tunnel: false
-		online: false
-		ghostMode: false
-		logConnections: false
-		ui: false
-		snippetOptions:
-		    rule:
-		        match: /<body>/i,
-		        fn: (snippet, match) ->
-		            return snippet + match;
-		files: {
-			'docs/styleguide/**/*'
-		}
-		server: {
-			baseDir: [
-				'docs/styleguide'
-			]
-		}
-
-
-gulp.task 'bs-reload', ->
-	browserSync.reload
 
 gulp.task 'clear', (done) ->
   $.cache.clearAll done

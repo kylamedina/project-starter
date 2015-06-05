@@ -4,10 +4,10 @@
 		{
 			"folder_exclude_patterns":
 			[
-				// "node_modules",
+				"node_modules",
 				"design",
-				// "app",
-				// "tmp",
+				"app",
+				"tmp",
 				// "font"
 			],
 			"path": ".",

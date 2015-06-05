@@ -24,19 +24,4 @@ gulp.task 'coffee-watch', ->
 		.pipe $.jshint.reporter(stylish)
 		.pipe gulp.dest './app/js'
 
-gulp.task 'js-watch', ->
-	gulp.src(['./tmp/js/vendor/*.js','./tmp/js/*.js'])
-		.pipe $.plumber(errorHandler: onError)
-		.pipe($.order([
-			'tmp/js/vendor/*.js'
-			'tmp/js/*.js'
-		]))
-		# .pipe($.accord('uglify-js', {
-		# 	beautify: true
-		# 	mangle: false
-		# }))
-		.pipe $.concat 'vendor.js'
-		.pipe gulp.dest 'app/js'
-
 gulp.task('coffee', ['coffee-watch'], browserSync.reload);
-gulp.task('js', ['js-watch'], browserSync.reload);
