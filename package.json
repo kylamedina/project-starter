@@ -53,5 +53,9 @@
     "styleguidejs": "kylamedina/styleguide.js",
     "stylus": "*",
     "uglify-js": "*"
+  },
+  "devDependencies": {
+    "gulp-if": "^1.2.5",
+    "lazypipe": "^1.0.1"
   }
 }

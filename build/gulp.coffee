@@ -17,6 +17,9 @@ requireDir = require('require-dir')
 requireDir './tasks',
   recurse: true
 
+production = false
+styleguide = false
+
 gulp.task 'watch', ['browser-sync'], ->
 	gulp.watch [ 'src/static/**/*' ], ['static']
 	gulp.watch [ 'src/img/**/*' ], ['img']
@@ -26,11 +29,11 @@ gulp.task 'watch', ['browser-sync'], ->
 	gulp.watch [ 'src/font/**/*' ], ['font']
 	gulp.watch [ 'src/coffee/**/**/*.coffee' ], ['coffee']
 	gulp.watch [ 'build/components/**/*' ], ['bower']
-	gulp.watch [ 
-		'./build/styleguide/**/*', 
-		'./README.md',
-		'./app/css/**/*.css' 
-	], ['styleguide']
+	# gulp.watch [ 
+	# 	'./build/styleguide/**/*', 
+	# 	'./README.md',
+	# 	'./app/css/**/*.css' 
+	# ], ['styleguide']
 	
 
 gulp.task 'default', (cb) ->

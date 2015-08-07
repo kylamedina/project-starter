@@ -19,7 +19,7 @@ autoprefixer = require('autoprefixer-stylus')
 gulp.task('styl', ['styl-watch']);
 
 gulp.task 'styl-watch', ->
-	return gulp.src('src/styl/index.styl')
+	gulp.src('src/styl/index.styl')
 		.pipe $.plumber(errorHandler: onError)
 		.pipe $.accord('stylus', {
 			use: [
@@ -42,15 +42,17 @@ gulp.task 'styl-watch', ->
 
 
 gulp.task 'styleguide', ->
-	StyleGuide = require('styleguidejs')
-	sg = new StyleGuide
-	sg.addFile 'app/css/main.css'
-	sg.render
-		extraCss: [ 
-			'app/css/font.css'
-		]
-		extraJs: [ 
-			'app/js/vendor.js', 
-			'app/js/app.js', 
-		]
-		outputFile: 'docs/styleguide/index.html'
+	gulp.src('*').pipe $.if(styleguide, ->
+		StyleGuide = require('styleguidejs')
+		sg = new StyleGuide
+		sg.addFile 'app/css/main.css'
+		sg.render
+			extraCss: [ 
+				'app/css/font.css'
+			]
+			extraJs: [ 
+				'app/js/vendor.js', 
+				'app/js/app.js', 
+			]
+			outputFile: 'docs/styleguide/index.html'
+	)
