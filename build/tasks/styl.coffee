@@ -42,17 +42,16 @@ gulp.task 'styl-watch', ->
 
 
 gulp.task 'styleguide', ->
-	gulp.src('*').pipe $.if(styleguide, ->
-		StyleGuide = require('styleguidejs')
-		sg = new StyleGuide
-		sg.addFile 'app/css/main.css'
-		sg.render
-			extraCss: [ 
-				'app/css/font.css'
-			]
-			extraJs: [ 
-				'app/js/vendor.js', 
-				'app/js/app.js', 
-			]
-			outputFile: 'docs/styleguide/index.html'
-	)
+	#gulp.src('*').pipe $.if styleguide, ->
+	StyleGuide = require('styleguidejs')
+	sg = new StyleGuide
+	sg.addFile 'app/css/main.css'
+	sg.render
+		extraCss: [ 
+			'app/css/font.css'
+		]
+		extraJs: [ 
+			'app/js/vendor.js', 
+			'app/js/app.js', 
+		]
+		outputFile: 'docs/styleguide/index.html'

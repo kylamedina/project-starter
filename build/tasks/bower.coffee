@@ -7,10 +7,6 @@ onError = (error) ->
 	$.util.log '======= ERROR. ========\n'
 	$.util.log error
 
-gulp.task 'install', ->
-	return gulp.src(['./bower.json','./package.json'])
-		.pipe $.install()
-
 gulp.task 'bower', ->
 	jsFilter = $.filter(['**/*.js'])
 	cssFilter = $.filter(['**/*.css'])

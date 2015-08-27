@@ -25,7 +25,7 @@ gulp.task 'coffee-watch', ->
 		.pipe $.accord('coffee-script')
 		.pipe $.jshint()
 		.pipe $.jshint.reporter(stylish)
-		.pipe $.if(production, $.accord('uglify-js'))
+		# .pipe $.if(production, $.accord('uglify-js'))
 		.pipe gulp.dest './app/js'
 
 gulp.task('coffee', ['coffee-watch'], browserSync.reload);

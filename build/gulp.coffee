@@ -37,8 +37,7 @@ gulp.task 'watch', ['browser-sync'], ->
 	
 
 gulp.task 'default', (cb) ->
-	runSequence 'install',
-		'coffee',
+	runSequence 'coffee',
 		'styl',
 		'bower',
 		'jade',
@@ -47,7 +46,7 @@ gulp.task 'default', (cb) ->
 		'img', 
 		'svg',
 		'watch',
-		'styleguide'
+		# 'styleguide'
 		->
 
 gulp.task 'browser-sync', ->
