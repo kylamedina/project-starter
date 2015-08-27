@@ -1,0 +1,26 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.zip",
+				"*.otf",
+				"*.sublime-workspace",
+			],
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				"design",
+				"tmp",
+				"app",
+				"fonts"
+			],
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"tab_size": 4
+	}
+}
