@@ -101,5 +101,6 @@ dev
 design
 node_modules
 build/components/**/*
+!.gitkeep
 docs
 tmp
