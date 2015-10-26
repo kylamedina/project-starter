@@ -8,3 +8,25 @@ fs(size)
 
 px(value)
 	unit((value*0.1), 'rem')
+	
+ib(position)
+	display inline-block
+	vertical-align position
+	
+bgcover()
+	background-size cover !important
+	background-position 50% 50% !important
+	
+aspect-ratio(width, height, el)
+	position: relative
+	&:before
+		display: block
+		content: ""
+		width: 100%
+		padding-top: (height / width) * 100%
+	> el
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
