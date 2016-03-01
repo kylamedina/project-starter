@@ -2,11 +2,11 @@
  * START APP.JS
 ###
 
-MKBL = {}
+APP = {}
 
-MKBL.toggleActivation = (el, elClass) ->
+APP.toggleActivation = (el, elClass) ->
 	elClass = elClass || 'is-active'
 	$(el).toggleClass(elClass)
 
 $ ->
-	MKBL.toggleActivation('body')
+	APP.toggleActivation('body')
