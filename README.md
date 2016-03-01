@@ -7,15 +7,11 @@
 
 `npm i gulp bower -g`
 
-##### Install Node Build Components:
+##### Install Node and Bower Components:
 
 `npm i`
 
-##### Install Bower Front-End Components into the build folder:
-
-`bower i`
-
-(To install new components, `bower i <component> --save`. The component is automatically added to vendor.js if the components bower.json is correct. Sometimes the components main file needs to be overridden which can be done is build/bower.json)
+(Bower components are automatically added to vendor.js if the components bower.json is correct. Sometimes a bower component's main file needs to be overridden which can be done is build/bower.json)
 
 ##### Run all tasks:
 

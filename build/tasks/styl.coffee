@@ -23,11 +23,11 @@ gulp.task 'styl-watch', ->
 		.pipe $.plumber(errorHandler: onError)
 		.pipe $.accord('stylus', {
 			use: [
-				axis()
-				jeet()
-				rupture()
 				nib()
-				autoprefixer()
+				rupture()
+				jeet()
+				axis()
+				# autoprefixer()
 			]
 			include: ['src/styl']
 			compress: false

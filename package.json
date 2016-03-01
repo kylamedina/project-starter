@@ -31,7 +31,6 @@
     "gulp-filter": "*",
     "gulp-if": "^1.2.5",
     "gulp-imagemin": "*",
-    "gulp-install": "*",
     "gulp-jshint": "*",
     "gulp-load-plugins": "*",
     "gulp-notify": "*",
@@ -45,9 +44,9 @@
     "gulp-util": "*",
     "jade": "*",
     "jeet": "*",
-    "jshint": "^2.9.1",
+    "jshint": "*",
     "jshint-stylish": "*",
-    "lazypipe": "^1.0.1",
+    "lazypipe": "*",
     "main-bower-files": "*",
     "nib": "*",
     "require-dir": "*",
@@ -56,5 +55,8 @@
     "styleguidejs": "kylamedina/styleguide.js",
     "stylus": "*",
     "uglify-js": "*"
+  },
+  "scripts": {
+    "postinstall": "bower install"
   }
 }
