@@ -29,11 +29,11 @@ gulp.task 'watch', ['browser-sync'], ->
 	gulp.watch [ 'src/font/**/*' ], ['font']
 	gulp.watch [ 'src/coffee/**/**/*.coffee' ], ['coffee']
 	gulp.watch [ 'build/components/**/*' ], ['bower']
-	gulp.watch [ 
-		'./build/styleguide/**/*', 
-		'./README.md',
-		'./app/css/**/*.css' 
-	], ['styleguide']
+	# gulp.watch [ 
+	# 	'./build/styleguide/**/*', 
+	# 	'./README.md',
+	# 	'./app/css/**/*.css' 
+	# ], ['styleguide']
 	
 
 gulp.task 'default', (cb) ->
