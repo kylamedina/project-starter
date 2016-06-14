@@ -25,7 +25,7 @@ gulp.task 'watch', ['browser-sync'], ->
 	gulp.watch [ 'src/img/**/*' ], ['img']
 	gulp.watch [ 'src/svg/**/*.svg' ], ['svg']
 	gulp.watch [ 'src/styl/**/*.styl' ], ['styl']
-	gulp.watch [ 'src/jade/**/*' ], ['jade']
+	gulp.watch [ 'src/pug/**/*' ], ['pug']
 	gulp.watch [ 'src/font/**/*' ], ['font']
 	gulp.watch [ 'src/coffee/**/**/*.coffee' ], ['coffee']
 	gulp.watch [ 'build/components/**/*' ], ['bower']
@@ -40,7 +40,7 @@ gulp.task 'default', (cb) ->
 	runSequence 'coffee',
 		'styl',
 		'bower',
-		'jade',
+		'pug',
 		'font',
 		'static', 
 		'img', 

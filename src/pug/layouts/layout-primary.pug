@@ -16,7 +16,7 @@ html.no-js(lang='')
 			// Async Image Loading
 			function aload(t){"use strict";t=t||window.document.querySelectorAll("[data-aload]"),void 0===t.length&&(t=[t]);var a,e=0,r=t.length;for(e;r>e;e+=1)a=t[e],a["LINK"!==a.tagName?"src":"href"]=a.getAttribute("data-aload"),a.removeAttribute("data-aload");return t}
 		block head
-			//- If extra head content is necessary per page, it can be added in index.jade
+			//- If extra head content is necessary per page, it can be added in index.pug
 
 	body(style='opacity:0')
 
@@ -24,10 +24,10 @@ html.no-js(lang='')
 			include ./includes/symbols.svg
 		
 		block content
-			//- This gets replaced by content in index.jade
+			//- This gets replaced by content in index.pug
 		
 		block footer
-			//- If extra footer content is necessary per page, it can be added in index.jade
+			//- If extra footer content is necessary per page, it can be added in index.pug
 
 		block scripts
 		browsersync

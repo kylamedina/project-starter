@@ -36,6 +36,7 @@
     "gulp-notify": "*",
     "gulp-order": "*",
     "gulp-plumber": "*",
+    "gulp-pug": "^3.0.3",
     "gulp-rename": "*",
     "gulp-replace": "*",
     "gulp-stylus": "*",

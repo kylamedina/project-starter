@@ -8,11 +8,12 @@ onError = (error) ->
 	$.util.log '======= ERROR. ========\n'
 	$.util.log error
 
-gulp.task 'jade-watch', ->
-	return gulp.src(['src/jade/**/*.jade','!src/jade/layouts/**/*.jade','!src/jade/includes/**/*.jade','!src/jade/modules/**/*.jade'])
+gulp.task 'pug-watch', ->
+	return gulp.src(['src/pug/**/*.pug','!src/pug/layouts/**/*.pug','!src/pug/includes/**/*.pug','!src/pug/modules/**/*.pug'])
 		.pipe $.plumber(errorHandler: onError)
-		.pipe $.accord 'jade',
-			pretty: true
+		.pipe $.pug()
+		# .pipe $.accord 'pug',
+		# 	pretty: true
 		.pipe gulp.dest('app')
 
-gulp.task('jade', ['jade-watch'], browserSync.reload);
+gulp.task('pug', ['pug-watch'], browserSync.reload);

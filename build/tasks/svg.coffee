@@ -42,5 +42,5 @@ gulp.task 'svg', ['svgmin'], ->
 				xmlMode: true
 		)
 		.pipe gulp.dest 'docs/styleguide/includes' 
-		.pipe gulp.dest 'src/jade/layouts/includes' 
+		.pipe gulp.dest 'src/pug/layouts/includes' 
 		
